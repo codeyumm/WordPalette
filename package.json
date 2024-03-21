@@ -1,0 +1,20 @@
+{
+  "name": "wordpalette",
+  "version": "1.0.0",
+  "description": "API Project for http-5222",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "author": "Priyam Desai",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.1",
+    "mongodb": "^6.5.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
