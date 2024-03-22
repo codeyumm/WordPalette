@@ -14,3 +14,39 @@ block main-content
 
 
 
+    section.result-container.content-wrapper
+
+        .container
+            h2 Words that 
+                span.highlight
+                    | sound 
+                | like #{userInput}
+
+            .similar-sound-container.words-container
+
+                
+            
+                    each word, index in similarSoundWords
+                        .word-container(class=(index >= 10 ? 'hidden' : ''))
+                            h2 #{word.word}
+                            h6 Accuracy #{word.score}
+                        
+
+                    // See more button for similar sound words
+                    button#see-more-sound-button(type="button") See more
+                
+            
+
+        .similar-spelling-container.words-container
+            h2 Words that 
+                span.highlight
+                  | spelled 
+                | like #{userInput}
+
+                each word, index in similarSpelledWords
+                    .word-container(class=(index >= 10 ? 'hidden' : ''))
+                        h2 #{word.word}
+                        h6 Accuracy #{word.score}
+
+                // See more button for similar spelled words
+                button#see-more-spelling-button(type="button") See more

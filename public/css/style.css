@@ -7,7 +7,7 @@
     2. Default and global styling
     3. Header style
     4. Hero section styling
-
+    5. Result section styling
    -------------------------------- */
 
 
@@ -35,7 +35,7 @@ html{
 body{
     /* background-color: var(--primary-color); */
     background-color: white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: black;
 }
 
@@ -76,8 +76,8 @@ nav{
 /* 4. Hero section styling */
 
 .hero{
-    background-color: var(--primary-color);
-    min-height: 100vh;
+    /* background-color: var(--primary-color); */
+
 }
 
 #search{
@@ -95,7 +95,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 36px;
 }
 
 input[type="submit"]{
@@ -122,7 +122,7 @@ input[type="text"]{
     padding: 0px 64px;
     font-family: "Inter", sans-serif;
     font-weight: 200;
-    box-shadow: 0 0 60px rgba(255, 255, 255, 0.5); 
+    box-shadow: 0 0 60px var(--primary-color); 
     color: white;
 }
 
@@ -133,4 +133,72 @@ input[type="text"]:focus{
 }
 
 
+/* 5. Result section styling */
+.result-container{
+    /* background-color: var(--primary-color); */
+    padding-top: 60px;
 
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+
+.words-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.word-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.word-container h2{
+    font-family: 'Inter';
+    font-weight: 400;
+}
+
+.word-container h6{
+    font-family: 'Inter';
+    font-weight: 300;
+}
+
+
+.similar-sound-container .word-container.hidden,
+.similar-spelling-container .word-container.hidden {
+    display: none;
+}
+
+button {
+    width: 200px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-family: 'Inter';
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+
+
+button:hover {
+    background-color: var(--secodary-color);
+    color: white;
+    transition: all 0.5s;
+}
+
+.word-container:first-child {
+    padding-top: 32px;
+}
+
+.highlight{
+    color: #4490F9;
+}
