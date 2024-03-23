@@ -14,16 +14,19 @@ router.route('/').get( async(request, response) => {
     // get user input from request
     const word = request.query.searchInput;
 
+    var similarSoundWords = [];
+    var similarSpelledWords = [];
+
       // check if the request is coming from search bar or not
     if( word != null ){
 
-
+       
 
         // get similar words from function
-        var similarSoundWords = await dataMuse.getSimilarlySoundWords( word );
+        similarSoundWords = await dataMuse.getSimilarlySoundWords( word );
 
         // get similar spelled words from function
-        var similarSpelledWords = await dataMuse.getSimilarlySpelledWords( word );
+        similarSpelledWords = await dataMuse.getSimilarlySpelledWords( word );
 
         
 

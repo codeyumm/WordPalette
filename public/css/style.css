@@ -46,11 +46,11 @@ body{
 
 a{
     text-decoration: none;
-    color: white;
+    color: #4490F9;
 }
 
 a:hover{
-    color: black;
+    color: white;
 }
 
 
@@ -67,6 +67,7 @@ header{
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
     font-size: 24px;
+    color:#4490F9;
 }
 
 nav{

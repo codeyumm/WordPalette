@@ -35,18 +35,22 @@ block main-content
                     // See more button for similar sound words
                     button#see-more-sound-button(type="button") See more
                 
-            
-
-        .similar-spelling-container.words-container
+        .container
             h2 Words that 
                 span.highlight
-                  | spelled 
+                    | spelled 
                 | like #{userInput}
 
-                each word, index in similarSpelledWords
-                    .word-container(class=(index >= 10 ? 'hidden' : ''))
-                        h2 #{word.word}
-                        h6 Accuracy #{word.score}
+            .similar-sound-container.words-container
 
-                // See more button for similar spelled words
-                button#see-more-spelling-button(type="button") See more
+                
+            
+                    each word, index in similarSpelledWords
+                        .word-container(class=(index >= 10 ? 'hidden' : ''))
+                            h2 #{word.word}
+                            h6 Accuracy #{word.score}
+                        
+
+                    // See more button for similar sound words
+                    button#see-more-sound-button(type="button") See more    
+
