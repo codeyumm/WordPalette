@@ -5,6 +5,22 @@ block append styleSheets
 block main-content
 
     section.details-container.content-wrapper
-        h1 Defination of #{word}
+        
+        .defination-container
+            h1 Defination of #{word}
 
-        h3 #{defination}
+            h3 #{defination}
+
+        .syn-container
+
+            h3 Synonyms
+            each synonym in synonyms
+                p #{synonym},
+        
+  
+        .ant-container
+            h3 Antonyms
+            each antonym in antonyms
+                p #{antonym}
+        
+        a(href="/?searchInput=" + word) Back to list

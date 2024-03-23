@@ -8,6 +8,7 @@
     3. Header style
     4. Hero section styling
     5. Result section styling
+    6. Details page styling
    -------------------------------- */
 
 
@@ -206,4 +207,16 @@ button:hover {
 
 .word-container a:hover{
     color: var(--primary-btn);
+}
+
+
+/* 6. defination page styling */
+.details-container{
+    padding: 100px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.syn-container{
+    display: flex;
 }
