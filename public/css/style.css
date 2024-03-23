@@ -215,8 +215,40 @@ button:hover {
     padding: 100px 60px;
     display: flex;
     flex-direction: column;
+    gap: 24px;
 }
 
-.syn-container{
+.defination-container h1{
+    font-size: 36px;
+}
+
+.defination-container h3{
+    padding-left: 24px;
+    padding-top: 12px;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.sa-wrapper{
     display: flex;
+    flex-direction: column;
+}
+
+.sa-wrapper h3{
+    font-size: 36px;
+}
+
+.syn-container, .ant-container{
+    width: 620px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-left: 24px;
+    padding-top: 12px;
+    font-size: 24px;
+}
+
+
+.similar-adjective-container .word-container.hidden {
+    display: none;
 }

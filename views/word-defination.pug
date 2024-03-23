@@ -7,20 +7,23 @@ block main-content
     section.details-container.content-wrapper
         
         .defination-container
-            h1 Defination of #{word}
+            h1 Defination of 
+                span.highlight #{word}
 
             h3 #{defination}
 
-        .syn-container
+        .sa-wrapper
 
-            h3 Synonyms
-            each synonym in synonyms
-                p #{synonym},
-        
-  
-        .ant-container
-            h3 Antonyms
-            each antonym in antonyms
-                p #{antonym}
+                h3 Synonyms
+                .syn-container
+                    each synonym in synonyms
+                        p #{synonym},
+            
+        .sa-wrapper
+
+                h3 Antonyms
+                .ant-container
+                    each antonym in antonyms
+                        p #{antonym},
         
         a(href="/?searchInput=" + word) Back to list

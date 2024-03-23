@@ -12,8 +12,6 @@ block main-content
                 input(type="text", name="searchInput", id="search", placeholder="Enter Your Word Here")
                 input(type="submit", value="Search") 
 
-
-
     section.result-container.content-wrapper
 
         .container
@@ -25,7 +23,6 @@ block main-content
             .similar-sound-container.words-container
 
                 
-            
                     each word, index in similarSoundWords
                         .word-container(class=(index >= 10 ? 'hidden' : ''))
                             h2 
@@ -42,7 +39,7 @@ block main-content
                     | spelled 
                 | like #{userInput}
 
-            .similar-sound-container.words-container
+            .similar-spelling-container.words-container
 
                 
             
@@ -53,8 +50,8 @@ block main-content
                             h6 Accuracy #{word.score}
                         
 
-                    // See more button for similar sound words
-                    button#see-more-sound-button(type="button") See more    
+                    // See more button for similar spelled words
+                    button#see-more-spelling-button(type="button") See more    
 
         .container
             h2 Adjectives which are 
@@ -62,7 +59,7 @@ block main-content
                     | related 
                 | with #{userInput}
 
-            .similar-sound-container.words-container
+            .similar-adjective-container.words-container
 
         
                     each word, index in relatedAdjectives
@@ -73,5 +70,5 @@ block main-content
                             h6 Accuracy #{word.score}
                         
 
-                    // See more button for similar sound words
-                    button#see-more-sound-button(type="button") See more 
+                    // See more button for related adjectives
+                    button#see-more-adjective-button(type="button") See more 
