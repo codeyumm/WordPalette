@@ -28,7 +28,8 @@ block main-content
             
                     each word, index in similarSoundWords
                         .word-container(class=(index >= 10 ? 'hidden' : ''))
-                            h2 #{word.word}
+                            h2 
+                                a(href="/details?word=" + word.word) #{word.word}
                             h6 Accuracy #{word.score}
                         
 
@@ -47,10 +48,30 @@ block main-content
             
                     each word, index in similarSpelledWords
                         .word-container(class=(index >= 10 ? 'hidden' : ''))
-                            h2 #{word.word}
+                            h2 
+                                a(href="/details?word=" + word.word) #{word.word}
                             h6 Accuracy #{word.score}
                         
 
                     // See more button for similar sound words
                     button#see-more-sound-button(type="button") See more    
 
+        .container
+            h2 Adjectives which are 
+                span.highlight
+                    | related 
+                | with #{userInput}
+
+            .similar-sound-container.words-container
+
+        
+                    each word, index in relatedAdjectives
+                        .word-container(class=(index >= 10 ? 'hidden' : ''))
+                            h2 
+                                a(href="/details?word=" + word.word) #{word.word}
+
+                            h6 Accuracy #{word.score}
+                        
+
+                    // See more button for similar sound words
+                    button#see-more-sound-button(type="button") See more 
