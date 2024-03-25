@@ -19,6 +19,7 @@ router.route('/').get( async(request, response) => {
 
     var similarSoundWords = [];
     var similarSpelledWords = [];
+    var relatedAdjectives = [];
 
       // check if the request is coming from search bar or not
     if( word != null ){
