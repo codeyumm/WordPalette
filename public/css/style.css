@@ -9,6 +9,7 @@
     4. Hero section styling
     5. Result section styling
     6. Details page styling
+    7. Media queries for responsive desgin
    -------------------------------- */
 
 
@@ -61,7 +62,7 @@ a:hover{
 
 header{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     background-color: var(--secodary-color);
@@ -69,6 +70,7 @@ header{
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
     font-size: 24px;
+    padding: 12px 24px;
     color:var(--accent-color);
 }
 
@@ -92,6 +94,7 @@ nav{
     padding-top: 90px;
     display: flex;
     justify-content: center;
+
 }
 
 .search-container{
@@ -140,10 +143,11 @@ input[type="text"]:focus{
 .result-container{
     /* background-color: var(--primary-color); */
     padding-top: 60px;
-
+    
     display: flex;
     justify-content: space-around;
-
+    flex-wrap: wrap;
+    gap: 16px;
 
 }
 
@@ -254,4 +258,32 @@ button:hover {
 
 .similar-adjective-container .word-container.hidden {
     display: none;
+}
+
+.instruction-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    border: 4px solid #59C174;
+    padding: 62px;
+    border-radius: 12px;
+}
+
+.instruction-container h3{
+    margin-top: 24px;
+}
+
+
+
+/* 7. Media queries for responsive desgin */
+
+/* for tablet */
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    .result-container{
+        
+        gap: 36px;
+    }
 }

@@ -48,6 +48,8 @@ router.route('/').get( async(request, response) => {
 router.route('/details').get( async(request, response) => {
 
     const word = request.query.word;
+    const prevWord = request.query.prevWord;
+    console.log(prevWord);
 
     wordDetails = await merriamWebster.getDetailsOfWord( word );
 
@@ -117,8 +119,16 @@ router.route('/details').get( async(request, response) => {
    
 
 
-    response.status(200).render('word-defination', { word: word, defination: defination, synonyms: synonyms, antonyms: antonyms });
+    response.status(200).render('word-defination', { word: word, defination: defination, synonyms: synonyms, antonyms: antonyms, prevWord: prevWord });
 })
+
+// route for about page
+router.route('/about').get(async (request, response) => {
+
+  response.status(200).render("about");
+  
+});
+
 
 
 module.exports = router;

@@ -1,0 +1,37 @@
+extends ./shared/layout
+
+block append styleSheets
+
+block scripts
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/d3.js"></script>
+
+
+block main-content
+
+
+    section.result-container.content-wrapper
+   
+        .instruction-container
+            h2 About Our Site
+
+            p
+                | Welcome to the WordPalette! Dedicated to helping you expand your vocabulary and improve your writing skills. Here's hows the site works:
+                
+            h3 Our Features
+
+            ul
+                li 
+                    | Get words that sound like the one you've entered, helping you find alternatives and expand your vocabulary.
+                li 
+                    | Find words that are spelled similarly to your input, giving you more options for expressing yourself.
+                li 
+                    | Discover adjectives that are related to your input, enriching your writing with descriptive language.
+            
+            p It uses DataMuse API to get the similar words, adjectives and use MerriamWebster API for the defination
+
+            p
+                | Ready to explore? Simply enter a word in the search bar and start discovering new words, definitions, pronunciations, and more!
+
+
+

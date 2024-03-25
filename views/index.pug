@@ -14,11 +14,21 @@ block main-content
 
     section.result-container.content-wrapper
 
+    
+
         .container
-            h2 Words that 
-                span.highlight
-                    | sound 
-                | like #{userInput}
+            if userInput
+                h2 Words that 
+                        span.highlight
+                            | sound 
+                        |  like #{userInput}
+            else
+                h2 Get Words that 
+                            span.highlight
+                                | sound 
+                            |  like 
+
+
 
             .similar-sound-container.words-container
 
@@ -26,18 +36,25 @@ block main-content
                     each word, index in similarSoundWords
                         .word-container(class=(index >= 10 ? 'hidden' : ''))
                             h2 
-                                a(href="/details?word=" + word.word) #{word.word}
+                                a(href="/details?word=" + word.word + "&prevWord=" + userInput) #{word.word}
                             h6 Accuracy #{word.score}
                         
 
                     // See more button for similar sound words
-                    button#see-more-sound-button(type="button") See more
+                    if userInput
+                        button#see-more-sound-button(type="button") See more
                 
         .container
-            h2 Words that 
-                span.highlight
-                    | spelled 
-                | like #{userInput}
+            if userInput
+                h2 Words that 
+                        span.highlight
+                            | spelled 
+                        |  like #{userInput}
+            else
+                h2 Get Words that 
+                            span.highlight
+                                | spelled 
+                            |  like 
 
             .similar-spelling-container.words-container
 
@@ -46,18 +63,27 @@ block main-content
                     each word, index in similarSpelledWords
                         .word-container(class=(index >= 10 ? 'hidden' : ''))
                             h2 
-                                a(href="/details?word=" + word.word) #{word.word}
+                                a(href="/details?word=" + word.word + "&prevWord=" + userInput) #{word.word}
                             h6 Accuracy #{word.score}
                         
 
                     // See more button for similar spelled words
-                    button#see-more-spelling-button(type="button") See more    
+                    if userInput
+                        button#see-more-spelling-button(type="button") See more    
 
         .container
-            h2 Adjectives which are 
-                span.highlight
-                    | related 
-                | with #{userInput}
+
+            if userInput
+                h2 Related  
+                        span.highlight
+                            | Adjectives
+                        |  for #{userInput}
+            else
+                h2 Get related which are 
+                            span.highlight
+                                | Adjectives
+                                 
+
 
             .similar-adjective-container.words-container
 
@@ -65,10 +91,11 @@ block main-content
                     each word, index in relatedAdjectives
                         .word-container(class=(index >= 10 ? 'hidden' : ''))
                             h2 
-                                a(href="/details?word=" + word.word) #{word.word}
+                                a(href="/details?word=" + word.word + "&prevWord=" + userInput) #{word.word}
 
                             h6 Accuracy #{word.score}
                         
 
                     // See more button for related adjectives
-                    button#see-more-adjective-button(type="button") See more 
+                    if userInput
+                        button#see-more-adjective-button(type="button") See more 

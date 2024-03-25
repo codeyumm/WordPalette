@@ -33,3 +33,5 @@ document.addEventListener('DOMContentLoaded', function () {
         seeMoreAdjectiveButton.style.display = 'none';
     });
 });
+
+

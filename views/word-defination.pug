@@ -26,4 +26,6 @@ block main-content
                     each antonym in antonyms
                         p #{antonym},
         
-        a(href="/?searchInput=" + word) Back to list
+        form(action="/", method="get")
+            input(type="hidden", name="searchInput", value=prevWord)
+            input(type="submit", value="Back to list")
