@@ -180,7 +180,12 @@ input[type="text"]:focus{
 
 
 .similar-sound-container .word-container.hidden,
-.similar-spelling-container .word-container.hidden {
+.similar-spelling-container .word-container.hidden,
+.noun-container .words-container.hidden {
+    display: none;
+}
+
+.hidden{
     display: none;
 }
 
@@ -288,7 +293,10 @@ button:hover {
         gap: 36px;
     }
 
+    header{
+        flex-direction: column;
     
+    }
 
     #search{
         max-width: 80vw;
@@ -325,6 +333,13 @@ button:hover {
 
     #search-container{
         padding-top: 12px;
+    }
+
+    header{
+        flex-direction: column;
+        font-size: 18px;
+        text-align: center;
+    
     }
 
     #search-container input[type="text"]{
