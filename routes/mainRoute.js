@@ -34,13 +34,16 @@ router.route('/').get( async(request, response) => {
 
         // get related adjectives from function
         relatedAdjectives = await dataMuse.getRelatedAdjectives( word );
+        
+        nouns = await dataMuse.getNouns( word );
+
 
 
     } 
 
     // await searchFunctions.handleSearch();
 
-    response.status(200).render("index", { similarSoundWords: similarSoundWords, similarSpelledWords: similarSpelledWords, relatedAdjectives: relatedAdjectives, userInput: word });
+    response.status(200).render("index", { similarSoundWords: similarSoundWords, similarSpelledWords: similarSpelledWords, relatedAdjectives: relatedAdjectives, nouns:nouns , userInput: word });
 
 });
 

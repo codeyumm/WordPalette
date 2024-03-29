@@ -44,32 +44,53 @@ block main-content
                     if userInput
                         button#see-more-sound-button(type="button") See more
                 
-        .container
-            if userInput
-                h2 Words that 
-                        span.highlight
-                            | spelled 
-                        |  like #{userInput}
-            else
-                h2 Get Words that 
-                            span.highlight
-                                | spelled 
-                            |  like 
+        //- .container
+        //-     if userInput
+        //-         h2 Words that 
+        //-                 span.highlight
+        //-                     | spelled 
+        //-                 |  like #{userInput}
+        //-     else
+        //-         h2 Get Words that 
+        //-                     span.highlight
+        //-                         | spelled 
+        //-                     |  like 
 
-            .similar-spelling-container.words-container
+        //-     .similar-spelling-container.words-container
 
                 
             
-                    each word, index in similarSpelledWords
-                        .word-container(class=(index >= 10 ? 'hidden' : ''))
-                            h2 
-                                a(href="/details?word=" + word.word + "&prevWord=" + userInput) #{word.word}
-                            h6 Accuracy #{word.score}
+        //-             each word, index in similarSpelledWords
+        //-                 .word-container(class=(index >= 10 ? 'hidden' : ''))
+        //-                     h2 
+        //-                         a(href="/details?word=" + word.word + "&prevWord=" + userInput) #{word.word}
+        //-                     h6 Accuracy #{word.score}
                         
 
-                    // See more button for similar spelled words
-                    if userInput
-                        button#see-more-spelling-button(type="button") See more    
+        //-             // See more button for similar spelled words
+        //-             if userInput
+        //-                 button#see-more-spelling-button(type="button") See more    
+
+
+        .container
+            if userInput
+                h2 Words that can be used as
+                        span.highlight
+                            |  noun 
+                        |  with #{userInput}
+            else
+                h2 Get Words that can be used as
+                            span.highlight
+                                |  noun 
+                            |   
+
+            .container.noun-container.words-container
+                each word, index in nouns
+                    .word-container(class=(index >= 10 ? 'hidden' : ''))
+                        h2 
+                            a(href="/details?word=" + word.word + "&prevWord=" + userInput) #{word.word}
+
+                            h6 Accuracy #{word.score}
 
         .container
 

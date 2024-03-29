@@ -65,9 +65,35 @@ async function getRelatedAdjectives( word ){
     return response.json();
 }
 
+
+// get words which can be used as noun with given word
+async function getNouns( word ){
+
+    // url for API
+    url = `https://api.datamuse.com/words?rel_jja=${word}`;
+
+    let options = {
+        method: "get",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    let response = await fetch(
+        url,
+        options
+    )
+    
+    
+    return response.json();
+}
+
+
+
 // export all the functions
 module.exports = {
     getSimilarlySoundWords,
     getSimilarlySpelledWords,
-    getRelatedAdjectives
+    getRelatedAdjectives,
+    getNouns
 }
